@@ -61,7 +61,7 @@ $totalPages_Hot_order = ceil($totalRows_Hot_order/$maxRows_Hot_order)-1;
     <a href="view_order.php?id_order=<?php echo $row_Hot_order['ID_post']; ?>">
       <div class="cut-text" style="margin-bottom: 5px;">
         <span style="float:left;" class="glyphicon glyphicon-star text-size-18 <?php if($i<=3){echo "color-orange";}else{echo "text-W3";}?>"></span>
-        <span class="text-size-15 cut-text color-main1"><strong><?php echo $row_Hot_order['Title']; ?></strong></span>
+        <span class="text-size-18 cut-text font" style="color:#707070;"><strong><?php echo $row_Hot_order['Title']; ?></strong></span>
       </div>
     </a>
      <div class="col-md-7" style="padding-right:0px;">

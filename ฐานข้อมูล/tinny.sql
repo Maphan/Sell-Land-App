@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2017 at 02:29 PM
+-- Generation Time: Sep 03, 2017 at 04:24 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -9988,18 +9988,14 @@ INSERT INTO `geography` (`GEO_ID`, `GEO_NAME`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `img_post`
+-- Table structure for table `imgs_post`
 --
 
-CREATE TABLE `img_post` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE `imgs_post` (
+  `id` int(11) NOT NULL,
   `ID_post` varchar(20) NOT NULL,
-  `img1` varchar(25) DEFAULT NULL,
-  `img2` varchar(25) DEFAULT NULL,
-  `img3` varchar(25) DEFAULT NULL,
-  `img4` varchar(25) DEFAULT NULL,
-  `img5` varchar(25) DEFAULT NULL,
-  `img6` varchar(25) DEFAULT NULL
+  `File_name` varchar(25) NOT NULL,
+  `Size` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -10153,7 +10149,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `ID_user`, `Username`, `Email`, `Password`, `Phone1`, `Phone2`, `Line`, `FB`, `Address`, `permission`) VALUES
 (1, '00000000000000000000', 'ADMIN', 'admin', 'admin001', NULL, NULL, NULL, NULL, NULL, 1),
-(2, '00000000000000000000', 'ADMIN', 'admin02', 'admin002', NULL, NULL, NULL, NULL, NULL, 1);
+(2, '00000000000000000000', 'ADMIN', 'admin02', 'admin002', NULL, NULL, NULL, NULL, NULL, 1),
+(3, '22082017100918358398', 'AAAAA', 'AAA@hotmail.com', '000000', '0807823688', '', '', '', '', 2);
 
 -- --------------------------------------------------------
 
@@ -10202,11 +10199,10 @@ ALTER TABLE `geography`
   ADD PRIMARY KEY (`GEO_ID`);
 
 --
--- Indexes for table `img_post`
+-- Indexes for table `imgs_post`
 --
-ALTER TABLE `img_post`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `ID_post` (`ID_post`);
+ALTER TABLE `imgs_post`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `post`
@@ -10246,12 +10242,12 @@ ALTER TABLE `amphur`
 -- AUTO_INCREMENT for table `comment_post`
 --
 ALTER TABLE `comment_post`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `district`
 --
@@ -10263,15 +10259,15 @@ ALTER TABLE `district`
 ALTER TABLE `geography`
   MODIFY `GEO_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT for table `img_post`
+-- AUTO_INCREMENT for table `imgs_post`
 --
-ALTER TABLE `img_post`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `imgs_post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `province`
 --
@@ -10281,12 +10277,12 @@ ALTER TABLE `province`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `visit_post`
 --
 ALTER TABLE `visit_post`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

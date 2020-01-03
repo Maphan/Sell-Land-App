@@ -3344,19 +3344,19 @@ fieldset[disabled] .btn-warning.focus {
 }
 .btn-main {
   color: #FFF;
-  background-color: #0F976E;
+  background-color: #DD7E20;
 	border-radius: 4px;
 	border: 0px solid #D0D0D0
 }
 .btn-main:focus,
 .btn-main.focus {
   color: #FFF;
-  background-color: #0C7F5C;
+  background-color: #D86106;
   border-color: #FFF;
 }
 .btn-main:hover{
   color: #fff;
-  background-color: #0C7F5C;
+  background-color: #D86106;
   	border-radius: 4px;
 	border: 0px solid #FFF;
 }
@@ -4303,7 +4303,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-decoration: none;
 }
 .navbar-brand > img {
-  display: block;
+  /*display: block;*/
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
@@ -4549,7 +4549,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #555;
+  color: #ecf0f1;
   background-color: #e7e7e7;
   border-bottom: solid #11B872 2px;
 }

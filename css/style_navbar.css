@@ -1,28 +1,30 @@
 .navbar-default {
-  background-color: transparent;
-  border-color: transparent;
-  border: 0px;
-  margin-top: 25px; }
+  background-color: #DC6C16;
+  border-color: #DC6C16;
+  border: 0px; }
   .navbar-default .navbar-brand {
     color: #ecf0f1; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-      color: #CCC; }
+      color: #ecf0f1; }
   .navbar-default .navbar-text {
     color: #ecf0f1; }
   .navbar-default .navbar-nav > li > a {
     color: #ecf0f1; }
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-      color: #CCC; }
+      color: #ecf0f1;
+      border-bottom: solid #E1E1E1 2px;
+      transition: 0.2s;
+	  background-color: #DD7E20;}
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #CCC;
-    background-color: transparent; }
+    background-color: #DC6C16;
+    border-bottom: solid #E1E1E1 2px; }
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: #CCC;
-    background-color: transparent; }
+    color: #ecf0f1;
+    background-color: #DC6C16; }
   .navbar-default .navbar-toggle {
-    border-color: transparent; }
+    border-color: #DC6C16; }
     .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-      background-color: transparent; }
+      background-color: #DC6C16; }
     .navbar-default .navbar-toggle .icon-bar {
       background-color: #ecf0f1; }
   .navbar-default .navbar-collapse,
@@ -30,48 +32,25 @@
     border-color: #ecf0f1; }
   .navbar-default .navbar-link {
     color: #ecf0f1; }
-    .navbar-default .navbar-link:hover {
-      color: #CCC; }
+  .navbar-default .navbar-link:hover {
+      color: #ecf0f1; }
+  .navbar_menu {
+    font-family: 'cs_chatthairegular';
+    font-size: 25px; }
+
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ecf0f1; }
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-      color: #CCC; }
+    color: #ecf0f1;}
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #CCC;
-    background-color: transparent; } }
-.navbar_menu {
-  font-family: 'cs_chatthairegular';
-  font-size: 25px; }
-
-@media (min-width: 767px) {
-  .navbar-brand {
-    float: left;
-    height: 50px;
-    padding: 0px 80px;
-    font-size: 18px;
-    line-height: 20px; }
-
-  .navbar-left {
-    float: left !important;
-    margin-top: 10px; }
-
-  .navbar-right {
-    float: right !important;
-    margin-right: 15px;
-    margin-top: 10px; }
-
-  .navbar_menu {
-    font-family: 'cs_chatthairegular';
-    font-size: 24px; }
-
-  .navbar_menu b {
-    font-family: 'cs_chatthairegular';
-    font-size: 22px; } }
-@media (max-width: 767px) {
+    color: #ecf0f1;;
+	}
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+      color: #ecf0f1;
+      background-color: #DD7E20}
+    
   .navbar-default {
-    background-color: rgba(15, 15, 15, 0.88);
+    background-color: #DC6C16;
     border-color: #080808;
     margin-top: 0px; }
 
@@ -83,9 +62,39 @@
     line-height: 20px; }
 
   .navbar_loago {
-    width: 70px;
+    width: 100px;
     height: auto; }
 
   .navbar_menu {
     font-family: 'cs_chatthairegular';
-    font-size: 18px; } }
+    font-size: 18px; }}
+
+@media (min-width: 767px) {
+  .navbar-default {
+    padding: 5px 0px 5px 0px; }
+
+  .navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0px 15px;
+    font-size: 18px;
+    line-height: 20px; }
+
+  .navbar-left {
+    float: left !important;
+    margin-top: 10px; }
+
+  .navbar-right {
+    float: right !important;
+    margin-right: 15px;
+    margin-top: 0px; }
+
+  .navbar_menu {
+    font-family: 'cs_chatthairegular';
+    font-size: 23px; }
+
+  .navbar_menu b {
+    font-family: 'cs_chatthairegular';
+    font-size: 22px; } }
+@media (max-width: 767px) {
+   }

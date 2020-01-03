@@ -268,8 +268,9 @@ $totalRows_GEO_S = mysql_num_rows($GEO_S);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Order</title>
+    <title><?php echo $Domain; ?></title>
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -409,7 +410,7 @@ include("Navbar/navbar.php");
 
 </div>
 
-<div class="box-fullscreen bg-W2 ">
+<div class="box-fullscreen bg-W1 ">
 	<div class="container" style="padding-left:0px; padding-right:0px;">
 		<div class="col-lg-12" style="margin-top: 75px;">
 			<!--<div class="col-lg-8 font text-size-28 text-center">
@@ -545,7 +546,7 @@ include("Navbar/navbar.php");
 							$totalRows_Province = mysql_num_rows($Province);
 							// img_post
 							$id_post=$row_All_Order['ID_post'];
-							$query_Img_Post = "SELECT * FROM img_post WHERE ID_post = '$id_post'";
+							$query_Img_Post = "SELECT * FROM imgs_post WHERE ID_post = '$id_post'";
 							$Img_Post = mysql_query($query_Img_Post, $Myconnection) or die(mysql_error());
 							$row_Img_Post = mysql_fetch_assoc($Img_Post);
 							$totalRows_Img_Post = mysql_num_rows($Img_Post);
@@ -574,18 +575,8 @@ include("Navbar/navbar.php");
                         
 						<?php // result img
 							$name_img="";
-							if($row_Img_Post['img1']!=NULL){
-								$name_img=$row_Img_Post['img1'];
-							}else if($row_Img_Post['img2']!=NULL){
-								$name_img=$row_Img_Post['img2'];
-							}else if($row_Img_Post['img3']!=NULL){
-								$name_img=$row_Img_Post['img3'];
-							}else if($row_Img_Post['img4']!=NULL){
-								$name_img=$row_Img_Post['img4'];
-							}else if($row_Img_Post['img5']!=NULL){
-								$name_img=$row_Img_Post['img5'];
-							}else if($row_Img_Post['img6']!=NULL){
-								$name_img=$row_Img_Post['img6'];
+							if($row_Img_Post['File_name']!=NULL){
+								$name_img=$row_Img_Post['File_name'];
 							}else{$name_img='../no_img.jpg';}
 						
 						?>
@@ -696,7 +687,7 @@ include("Navbar/navbar.php");
 						  <tbody>
 							<tr>
 								<td valign="top" align="center" height="20%">
-									<span class="glyphicon glyphicon-user color-main2" style="font-size: 50px;"></span>
+									<span class="glyphicon glyphicon-user" style="font-size: 50px; color:#CCC;"></span>
 								</td>
 							</tr>
                             <tr>
@@ -744,7 +735,7 @@ include("Navbar/navbar.php");
 						  <tbody>
 							<tr>
 								<td valign="top" align="center" height="25%">
-									<span class="glyphicon glyphicon-user color-main2" style="font-size: 60px;"></span><br><br>
+									<span class="glyphicon glyphicon-user" style="font-size: 60px; color: #CCC;"></span><br>
 								</td>
 							</tr>
 							<tr>

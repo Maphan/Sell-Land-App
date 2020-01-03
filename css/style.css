@@ -17,19 +17,21 @@
 	color: red;
 }
 .color-main1{
-	color: #0F976E;
+	/*color: #0F976E;*/
+	color: #DD7E20;
 }
 .color-main2{
-	color: #0C7F5C;
+	/*color: #0C7F5C;*/
+	color: #D86106;
 }
 .color-orange{
 	color:orange !important;
 }
 .bg-main1{
-	background-color: #0F976E;
+	background-color: #DD7E20;
 }
 .bg-main2{
-	background-color: #0C7F5C;
+	background-color: #D86106;
 }
 .bg-W1{
 	background-color: #FFF;

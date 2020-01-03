@@ -1,4 +1,4 @@
 <?php
- $Domain="TINNY.COM";
- $domain="tinny.com";
+ $Domain="KaiteeDootee.com";
+ $domain="kaiteedootee.com/kaiteeapp/";
 ?>

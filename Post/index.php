@@ -1,4 +1,4 @@
-<?php require_once('../Connections/Myconnection.php'); ?>
+<?php require_once('../Connections/Myconnection.php'); ini_set('memory_limit', '128M'); ?>
 <?php
 if (!isset($_SESSION)) {
   session_start();
@@ -110,18 +110,13 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form_post")) {
 <?php
 	date_default_timezone_set('Asia/Bangkok');
 	$id_post=date('dmYHis').rand(0,999999); //20ตัว
-	$img1_name=$id_post.'1';
-	$img2_name=$id_post.'2';
-	$img3_name=$id_post.'3';
-	$img4_name=$id_post.'4';
-	$img5_name=$id_post.'5';
-	$img6_name=$id_post.'6';
 ?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>ลงประกาศ</title>
 
@@ -143,19 +138,11 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form_post")) {
       <script src="../js/boxOder.js"></script>
       
 	  <style type="text/css">
-		  html,body{
+		  body{
 			  width: 100%;
 			  height: 100%;
 			  padding: 0;
 			  margin: 0;	  
-		  }
-		  @media (max-width: 767px){
-			  html,body{
-			  width: 100%;
-			  height: 100%;
-			  padding: 0;
-			  margin: 0;  
-			  }
 		  }
 		  .help-block{
 			  font-size: 13px;
@@ -186,23 +173,40 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form_post")) {
 				position: absolute;
 				z-index: -1;
 			}
-		.inputfile + label {
+		  .inputfile + label {
 				cursor: pointer; 
-				font-size: 1.25em;
-				font-weight: 700;
+				font-size: 1.65em;
+				font-weight: 300;
 				color: white;
 				background-color: black;
 				display: inline-block;
-				padding:5px;
+				padding:5px 10px 5px 10px;
 				background-color: #0F976E;
 				width:100%;
+			  	border-radius: 4px;
 			}
+		  label .icon{
+			  font-size: 1.2em;
+			  margin-right: 10px;
+		  }
 			
-		.inputfile:focus + label,
-		.inputfile + label:hover {
+			.inputfile:focus + label,
+			.inputfile + label:hover {
 				background-color: #0C7F5C;
 			}
-		
+		  	.img-to-upload{
+				max-height: 150px;
+				min-height: 150px;
+				border: 1px dashed #8F8F8F;
+			}
+		  .btn-remove-img{
+			  position: absolute;
+			  top: 40%;
+			  left: 45%;
+		  }
+		  .form_img{
+			  overflow: hidden;
+		  }
 		  @media (max-width: 768px) {
 			  #lable{
 				  margin-top:5px;
@@ -213,9 +217,6 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form_post")) {
 			  }
 
 			.container {
-				padding:0px;
-			}
-			.container-fluid{
 				padding:0px;
 			}
 		}
@@ -252,13 +253,13 @@ include("../Navbar/navbar.php");
             </div>
             <?php }else{}?>
         </div>
-		<div class="col-md-9">
+		<div class="col-md-9" style="padding-left: 0px;padding-right: 0px;">
 			<form id="form_post" name="form_post" action="<?php echo $editFormAction; ?>" method="POST" enctype="multipart/form-data">
                 <div class="panel panel-default">
 					<div class="panel-heading text-center bg-B1">
 					  <h3 class="font"><span class="glyphicon glyphicon-globe color-main1"></span><b> ข้อมูล อสังหาริมทรัพย์</b></h3>
  					</div>
-					<div class="panel-body">
+					<div class="panel-body" style="padding-left: 0px; padding-right: 0px">
 						<div id="panel" class="col-md-12">	
                             <div class="col-md-6" style="padding-bottom:15px;">
                             	<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -356,37 +357,6 @@ include("../Navbar/navbar.php");
                             </div>
                         </div>
                         <div id="panel" class="col-md-12">	
-                            <div id="lable" class="col-md-3"><span id="track">#&nbsp;</span>ภาพประกอบ</div>
-                            <div class="col-md-2 col-xs-offset-0">
-                            	<span id="track" class="font text-size-18">(ขนาดไฟล์ไม่เกิน 8MB / ภาพ)</span>
-                               <input type="file" name="img1" id="img1" class="font inputfile" >
-                               <label for="img1" class="font"><span id="l1" class="glyphicon fa fa-download" >&nbsp;</span>เลือกรูป</label>
-                            </div>
-                            <div class="col-md-2">
-                               <input type="file" name="img2" id="img2" class="font inputfile" >
-                               <label for="img2" class="font"><span id="l2" class="glyphicon fa fa-download" >&nbsp;</span>เลือกรูป</label>
-                            </div>
-                            <div class="col-md-2">
-                               <input type="file" name="img3" id="img3"  class="font inputfile" >
-                               <label for="img3" class="font"><span id="l3" class="glyphicon fa fa-download" >&nbsp;</span>เลือกรูป</label>
-                            </div>
-                        </div>
-                        <div id="panel" class="col-md-12" style="margin-top:0px; padding-top:0px">	
-                            <div id="lable" class="col-md-3"></div>
-                            <div class="col-md-2">
-                               <input type="file" name="img4" id="img4"  class="font inputfile" >
-                               <label for="img4" class="font"><span id="l4" class="glyphicon fa fa-download" >&nbsp;</span>เลือกรูป</label>
-                            </div>
-                            <div class="col-md-2">
-                               <input type="file" name="img5" id="img5"  class="font inputfile" >
-                               <label for="img5" class="font"><span id="l5" class="glyphicon fa fa-download" >&nbsp;</span>เลือกรูป</label>
-                            </div>
-                            <div class="col-md-2">
-                               <input type="file" name="img6" id="img6"  class="font inputfile" >
-                               <label for="img6" class="font"><span id="l6" class="glyphicon fa fa-download" >&nbsp;</span>เลือกรูป</label>
-                            </div>
-                        </div>
-                        <div id="panel" class="col-md-12">	
                             <div id="lable" class="col-md-3" style=" margin-right:15px;"><span id="track">#&nbsp;</span>พิกัด GPS</div>
                             <div id="map-search" class="col-md-6 input-group">
                                 <input id="search-txt" type="text" maxlength="100" class="form-control" placeholder="ค้นหาด้วย ชื่อจังหวัด อำเภอ หรือ ตำบล">
@@ -406,6 +376,20 @@ include("../Navbar/navbar.php");
                         </div>
                         <div id="panel" class="col-md-12">	
                             <div id="map-canvas" class="col-md-12"></div>
+                        </div>
+                        <div id="panel" class="col-md-12">
+                            <hr color="#C1C1C1">
+                            <div class="text-center col-md-4"></div>
+                             <div class="text-center col-md-4">
+                              <input type="file" name="images[]" id="images" class="font inputfile" multiple>
+								 <label for="images" class="font"><span class="icon glyphicon glyphicon-picture" ></span>เพิ่มรูปภาพ<span id="amoutImg"></span></label>
+                            </div>
+                            <div class="text-center col-md-4"></div>
+                        </div>
+                        <div id="panel" class="col-md-12">
+                            <div id="images-to-upload" class="text-center row col-md-12">
+                            	
+                            </div>
                         </div>
                         
 					</div>
@@ -462,12 +446,6 @@ include("../Navbar/navbar.php");
                                     <input type="url" class="form-control" id="facebook" name="facebook" placeholder="https://" value="<?php echo $row_Myuser['FB']; ?>"/>
                                 </div>
 							</div>
-                            <div id="panel" class="col-md-12">	
-                                <div id="lable" class="col-md-3"><span id="track">#&nbsp;</span>ที่อยู่</div>
-                                <div class="col-md-8">
-                                    <textarea name="address" rows="5" maxlength="500" class="form-control" id="address" placeholder="Address"><?php echo $row_Myuser['Address']; ?></textarea>
-                                </div>
-                        	</div>
                             <?php if($row_Myuser['Password']==NULL){?>
                             <div id="panel" class="col-md-12">	
                                 <div id="lable" class="col-md-3"><span id="track">#&nbsp;</span>รหัสผ่านประกาศ</div>
@@ -495,6 +473,7 @@ include("../Navbar/navbar.php");
                 </div>
                 
                 <input name="id_post" id="id_post" type="hidden" value="<?php echo $id_post;?>">
+                <input type="hidden" name="address" class="form-control" id="address" value="<?php echo $row_Myuser['Address']; ?>"> 
                 <input name="img1_name" id="img1_name" type="hidden" value="<?php echo $img1_name;?>">
                 <input name="img2_name" id="img2_name" type="hidden" value="<?php echo $img2_name;?>">
                 <input name="img3_name" id="img3_name" type="hidden" value="<?php echo $img3_name;?>">
@@ -667,15 +646,72 @@ include("../Navbar/navbar.php");
     
 <!---------------- form submit to file upload ------------------------>
 <script type="text/javascript">
-
+		//file collection array
+		var fileCollection = new Array();
+		$('#images').on('change',function(e){
+			var files = e.target.files;
+			$.each(files, function(i, file){
+				var reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.onload = function(e){
+					var template = '<div class="form_img col-xs-12 col-md-4">'+
+						'	<img class="img-to-upload" src="'+e.target.result+'"> '+
+						'	<button href="#" class="btn btn-sm btn-danger btn-remove-img">ลบ</button>'+
+						'</div>';
+					$('#images-to-upload').append(template);
+					fileCollection.push(file);
+					amountFile();
+				};
+			});
+		});
+		//removeCollection
+		var list = document.getElementById("images-to-upload"),
+    	items = list.getElementsByTagName("button");
+		list.onclick = function(e) {
+			var evt = e || window.event,
+			src = evt.target || evt.srcElement;
+			var myIndex = findIndex(src);
+			//alert(myIndex);
+			console.log(myIndex);
+			console.log(fileCollection);
+		};
+		function findIndex( elem ) {
+			var i, len = items.length;
+			for(i=0; i<len; i++) {
+				if (items[i]===elem) {
+					$(elem).parent(".form_img").remove();// remove element this click
+					fileCollection.splice(i,1);// remove file in array my collection
+					amountFile();//update text amoutImg
+					return i;
+				}
+			}
+			return -1;
+		}
+		//update amount img
+		function amountFile(){
+			if(fileCollection.length=='0'){
+				document.getElementById("amoutImg").innerHTML = "";
+			}else{
+				document.getElementById("amoutImg").innerHTML = " ("+fileCollection.length+")";
+			}
+		}
+		// event on form submit 
 		$(document).on('submit','form',function(e){
 			$form = $(this);
 			uploadImage($form);
 		});
 		function uploadImage($form){
+			var data = new FormData();
+			var i;
+			for(i=fileCollection.length-1;i>=0;i--){
+				data.append(i, fileCollection[i]);
+			}
+			data.append('size',fileCollection.length);
+			var idpost='<?php echo $id_post;?>';
+			data.append('id_post',idpost);
+			
 			$form.find('.progress-bar').removeClass('progress-bar-success')
 										.removeClass('progress-bar-danger');
-			var formdata = new FormData($form[0]); //formelement
 			var request = new XMLHttpRequest();
 			//progress event...
 			request.upload.addEventListener('progress',function(e){
@@ -687,8 +723,8 @@ include("../Navbar/navbar.php");
 				$form.find('.progress-bar').addClass('progress-bar-success').html('upload completed');
 			});
 			//upload
-			request.open('post', 'server.php');
-			request.send(formdata);
+			request.open('post', 'server_img.php');
+			request.send(data);
 			//cancel
 			$form.on('click','.cancel',function(){
 				request.abort();
@@ -696,73 +732,6 @@ include("../Navbar/navbar.php");
 			});
 		}
 		
-</script>
-
-<!--- btn slect file -->
-<script type="text/javascript">
-
-
-setInterval(function(){ 
-	var img1 = $('#img1').val();
-	if(img1==''){
-		$('#l1').removeClass("glyphicon-picture");
-		$('#l1').addClass("fa fa-download");
-	}else{
-		$('#l1').removeClass("fa fa-download");
-		$("#l1").addClass("glyphicon-picture");
-	}
-	
-}, 10);
-setInterval(function(){ 
-	var img2 = $('#img2').val();
-	if(img2==''){
-		$('#l2').removeClass("glyphicon-picture");
-		$('#l2').addClass("fa fa-download");
-	}else{
-		$('#l2').removeClass("fa fa-download");
-		$("#l2").addClass("glyphicon-picture");
-	}
-}, 10);
-setInterval(function(){ 
-	var img3 = $('#img3').val();
-	if(img3==''){
-		$("#l3").removeClass("glyphicon-picture");
-		$('#l3').addClass("fa fa-download");
-	}else{
-		$('#l3').removeClass("fa fa-download");
-		$("#l3").addClass("glyphicon-picture");
-	}
-}, 10);
-setInterval(function(){ 
-	var img4 = $('#img4').val();
-	if(img4==''){
-		$('#l4').removeClass("glyphicon-picture");
-		$('#l4').addClass("fa fa-download");
-	}else{
-		$('#l4').removeClass("fa fa-download");
-		$('#l4').addClass("glyphicon-picture");
-	}
-}, 10);
-setInterval(function(){ 
-	var img5 = $('#img5').val();
-	if(img5==''){
-		$('#l5').removeClass("glyphicon-picture");
-		$('#l5').addClass("fa fa-download");
-	}else{
-		$('#l5').removeClass("fa fa-download");
-		$('#l5').addClass("glyphicon-picture");
-	}
-}, 10);
-setInterval(function(){ 
-	var img6 = $('#img6').val();
-	if(img6==''){
-		$('#l6').removeClass('glyphicon-picture');
-		$('#l6').addClass("fa fa-download");
-	}else{
-		$('#l6').removeClass("fa fa-download");
-		$('#l6').addClass("glyphicon-picture");
-	}
-}, 10);
 </script>
 
 <!-- set default map api -->

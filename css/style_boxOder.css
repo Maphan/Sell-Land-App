@@ -17,7 +17,7 @@
     position: relative;
     display: block;
     padding: 3px;
-    margin: 0px 0px 3px 0xp;
+    margin: 0px 0px 3px 0px;
     background-color: transparent;
     border: 0px solid #ddd; }
 
@@ -31,7 +31,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    color: #0C7F5C; }
+    color: #DC6C16; }
 
   .list-group-item-text #icon {
     font-size: 12px;
@@ -125,7 +125,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    color: #0C7F5C; }
+    color: #DC6C16; }
 
   .list-group-item-text #icon {
     font-size: 12px;

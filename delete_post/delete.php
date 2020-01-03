@@ -27,7 +27,7 @@ $goto_fail="finish.php?suc=0&post_id=$idPost_delete";
 $path_img_post="../Post/images/".$idPost_delete;
 if ($_POST['pass_post']==$_POST['pass_con']) {
   $deleteSQL = "DELETE FROM post WHERE ID_post='$idPost_delete'";
-  $deleteSQL2 = "DELETE FROM img_post WHERE ID_post='$idPost_delete'";
+  $deleteSQL2 = "DELETE FROM imgs_post WHERE ID_post='$idPost_delete'";
   $deleteSQL3 = "DELETE FROM visit_post WHERE id_post='$idPost_delete'";
   $deleteSQL4 = "DELETE FROM contact WHERE ID_post='$idPost_delete'";
   $deleteSQL5 = "DELETE FROM comment_post WHERE ID_post='$idPost_delete'";

@@ -1,9 +1,9 @@
 <?php
 	$strTo = $_POST['email'];
-	$strSubject = 'Forget Password @Tinny.com';
-	$strHeader = "From: Tinny.com";
+	$strSubject = 'Forget Password @kaiteedootee.com';
+	$strHeader = "From: kaiteedootee.com";
 	$strMessage = "สวัสดีคุณ ".$_POST['name']."\r\n";
-	$strMessage .= "คุณเป็นสมาชิกของเว็บไซต์ Tinny.com \r\n";
+	$strMessage .= "คุณเป็นสมาชิกของเว็บไซต์ kaiteedootee.com \r\n";
 	$strMessage .= "รหัสผ่านของคุณคือ : ".$_POST['pass']."\r\n";
 	
 	$flgSend = mail($strTo,$strSubject,$strMessage,$strHeader);  // @ = No Show Error //

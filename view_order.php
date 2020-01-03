@@ -40,10 +40,16 @@ if (isset($_GET['id_order'])) {
   $colname_View_Order = $_GET['id_order'];
 }
 mysql_select_db($database_Myconnection, $Myconnection);
-$query_View_Order =("SELECT * FROM post,img_post,visit_post,contact WHERE post.ID_post='$colname_View_Order' AND img_post.ID_post=post.ID_post AND visit_post.id_post=post.ID_post AND contact.ID_post=post.ID_post");
+$query_View_Order =("SELECT * FROM post,visit_post,contact WHERE post.ID_post='$colname_View_Order' AND visit_post.id_post='$colname_View_Order' AND contact.ID_post='$colname_View_Order'");
 $View_Order = mysql_query($query_View_Order, $Myconnection) or die(mysql_error());
 $row_View_Order = mysql_fetch_assoc($View_Order);
 $totalRows_View_Order = mysql_num_rows($View_Order);
+
+mysql_select_db($database_Myconnection, $Myconnection);
+$query_ImgOrder = "SELECT * FROM imgs_post WHERE ID_post = '$colname_View_Order' ORDER BY id ASC";
+$ImgOrder = mysql_query($query_ImgOrder, $Myconnection) or die(mysql_error());
+$row_ImgOrder = mysql_fetch_assoc($ImgOrder);
+$totalRows_ImgOrder = mysql_num_rows($ImgOrder);
 
 $colname1_GEO = "-1";
 if (isset($row_View_Order['Geography'])) {
@@ -158,6 +164,7 @@ window.history.back();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title><?php echo $row_View_Order['Title']; ?></title>
 
@@ -262,15 +269,12 @@ include("Navbar/navbar.php");
 ?>
 
 <?php
-// get name ImgPost where img is upload
-$value_img=array($row_View_Order['img1'],$row_View_Order['img2'],$row_View_Order['img3'],$row_View_Order['img4'],$row_View_Order['img5'],$row_View_Order['img6']);
 $img=new arraylist();
-for($i=0;$i<6;$i++){
-	if($value_img[$i]!=NULL){
-		$img->add($value_img[$i]);
-	}else{}
-}
-
+do {
+	if($row_ImgOrder['File_name']!=NULL){
+		$img->add($row_ImgOrder['File_name']);
+	}
+} while ($row_ImgOrder = mysql_fetch_assoc($ImgOrder));
 ?>
 
 <div class="box-fullscreen bg-W2">
@@ -301,11 +305,11 @@ for($i=0;$i<6;$i++){
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
                               <div class="item active">
-                                <img src="Post/images/<?php echo $row_View_Order['ID_post']; ?>/<?php echo $img->get(0);?>">
+                                <img src="Post/images/<?php echo $row_View_Order['ID_post']; ?>/<?php echo $img->get(0);?>"  style="min-width: 100%;">
                               </div>
                               <?php for($i=1;$i<$img->size();$i++){?>
                               <div class="item">
-                                <img src="Post/images/<?php echo $row_View_Order['ID_post']; ?>/<?php echo $img->get($i);?>" style="min-width: 100%;">
+                                <img src="Post/images/<?php echo $row_View_Order['ID_post']; ?>/<?php echo $img->get($i);?>"  style="min-width: 100%;">
                               </div>
                               <?php }?>
                             </div>
@@ -324,8 +328,8 @@ for($i=0;$i<6;$i++){
                     </div><!-- END bOX SLIDE -->
                     
                     <div id="box_detail">
-                    	<div id="box_area" class="col-md-12 font color-main1">
-                        	<strong><span id="icon" class="glyphicon glyphicon-th-large color-main2"></span> 
+                    	<div id="box_area" class="col-md-12 font">
+                        	<strong><span id="icon" class="glyphicon glyphicon-th-large"></span> 
                             <?php if($row_View_Order['area_size_rai']==NULL && $row_View_Order['area_size_ngan']==NULL && $row_View_Order['area_size_var']==NULL){?>
                             <span>ไม่ระบุขนาดพื้นที่</span><?php }else{?>
                         	<?php if($row_View_Order['area_size_rai']!=NULL){echo $row_View_Order['area_size_rai']. "&nbsp;ไร่";}else{} ?> 
@@ -410,8 +414,8 @@ for($i=0;$i<6;$i++){
 					              </td>
 					            </tr>
 					          </tbody>
-						      </table>
-					      </div>
+					      </table>
+				      </div>
 						  <?php } while ($row_Comment_post = mysql_fetch_assoc($Comment_post)); }?>
 					</div>
 				</div>
@@ -425,11 +429,11 @@ for($i=0;$i<6;$i++){
 						  <tbody>
   							<tr>
   								<td valign="top" align="center" height="25%">
-  									<span class="glyphicon glyphicon-user color-main2" style="font-size: 60px;"></span>
+  									<span class="glyphicon glyphicon-user" style="font-size: 60px; color: #C2C2C2;"></span>
   								</td>
   							</tr>
-							</tbody>
-						  </table>
+						  </tbody>
+				  </table>
                         <div class="text-center" style="color:#666;">
 							             <span class="text-size-22 font"><b>คุณ <?php echo $row_View_Order['Name'];?></b></span><hr>
                         </div>
@@ -521,10 +525,10 @@ for($i=0;$i<6;$i++){
 					</div>
 				</div>
                 
-  			</div><!-- end col-md-3 -->
+		  </div><!-- end col-md-3 -->
        		
         </div>
-    </div>
+  </div>
 </div>
 
 <!-- Popup Edit Podt -->
@@ -652,4 +656,6 @@ mysql_free_result($GEO_W);
 mysql_free_result($GEO_E);
 
 mysql_free_result($GEO_S);
+
+mysql_free_result($ImgOrder);
 ?>

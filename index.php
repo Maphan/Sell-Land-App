@@ -1,4 +1,4 @@
-<?php require_once('Connections/Myconnection.php');?>
+<?php require_once('Connections/Myconnection.php'); ?>
 
 <!----------------------- Myuser ---------------------------->
 <?php
@@ -61,12 +61,14 @@ $totalRows_Myuser = mysql_num_rows($Myuser);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <meta name="description" content="ขายที่ดูที่ ขายที่ดิน ประกาศขายที่ดินฟรี">
+    <meta name="keywords" content="ขายที่ดูที่">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>TINNY</title>
+    <title><?php echo $Domain;?></title>
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="css/style_intro.css" rel="stylesheet">
     <link href="css/style_navbar.css" rel="stylesheet">
     <link href="font/stylesheet.css" rel="stylesheet">
     <link href="css/style_footer.css" rel="stylesheet">
@@ -87,19 +89,74 @@ $totalRows_Myuser = mysql_num_rows($Myuser);
 			  margin: 0;
 			  overflow: hidden;
 			  overflow-x: hidden;
-			  overflow-y: hidden;
-			  
-		  }
-		  @media (max-width: 767px){
-			  html,body{
-			  width: 100%;
+			  overflow-y: hidden;	  
+		  }		  
+		  .box-fullscreen{
 			  height: 100%;
-			  padding: 0;
-			  margin: 0;
-			  overflow: visible;
-			  overflow-x: visible;
-			  overflow-y: visible;  
+			  background-color: #DDDDDD;
+		  }
+		  .barnner{
+		  }
+		  
+		  .buy{
+			  background-color: #2CA869 ;
+		  }
+		  .sell{
+			  background-color: #CE38FF ;
+		  }
+		  .cover-navBar{
+				  width: 100%;
+				  height: 65px; 
+				  background-color: #DDDDDD;
 			  }
+		  @media (min-width: 767px){ /* PC */
+			  
+			  .container{
+				  padding-top:5px;
+			  }
+			  .btn-introMenu{
+				  color: #FFF;
+				  font-size: 30px;
+				  width: 160px;
+				  height: 160px;
+				  border: 0px solid #FFF;
+				  border-radius: 50%;
+				  -moz-border-radius: 50%;
+				  -webkit-border-radius: 50%;
+				  transition: 0.3s;
+		  	  }
+			  .btn-introMenu:hover{
+				  width: 160px;
+				  height: 160px;
+				  border: 10px solid #DD7E20;
+		  	  }
+		  }
+		   @media (max-width: 767px){/* Phone */
+			   html,body{
+				   width: 100%;
+				   height: 100%;
+				   padding: 0;
+				   margin: 0;
+				   overflow: visible;
+				   overflow-x: visible;
+				   overflow-y: visible;	  
+		  	   }
+			   .btn-introMenu{
+				  color: #FFF;
+				  font-size: 24px;
+				  width: 140px;
+				  height: 140px;
+				  border: 0px solid #FFF;
+				  border-radius: 50%;
+				  -moz-border-radius: 50%;
+				  -webkit-border-radius: 50%;
+				  transition: 0.3s;
+		  	  }
+			  .btn-introMenu:hover{
+				  width: 140px;
+				  height: 140px;
+				  border: 7px solid #DD7E20;
+		  	  }
 		  }
 	  </style>
   </head>
@@ -110,40 +167,43 @@ include("Navbar/level_navbar.php");
 NavBar_L1();
 include("Navbar/navbar.php"); 
 ?>
-
-<div class="gb_intro">
-	<div class="inner">
-		<div class="content">
-			<div class="col-lg-12 box_img_intro">
-				<div class="col-lg-6 ">
-					<a class="cursor" href="Post/">
-						<img class="img-responsive img_sell" src="images/intro/sell.png"></img >
-					</a>
-				</div>
-				<div class="col-lg-6 box_img_intro">
-					<a class="cursor" href="buy.php">
-						<img class="img-responsive img_buy" src="images/intro/buy.png"></img>
-					</a>
-				</div>
-			</div>
-			
+<div class="cover-navBar"></div>
+<div class="box-fullscreen">
+	<div class="container text-center">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<img src="images/intro/banner1200.jpg" class="img-responsive barnner"/>
 		</div>
-	</div>	
-		<div class="inner_buttom">
-			<div class="content phoneONhid">
-           		<!--<a class="button btn btn-lg btn_signin" href="SignIn.php">SIGN IN</a>-->
-            	<form action="buy.php" method="get" enctype="multipart/form-data">
+		<div class="col-md-2"></div>
+		<div style="margin-top: 10px; display: inline-block;">
+			<div class="col-xs-6 text-right">
+				<button class="btn-introMenu buy font text-size-34" onclick="goto('buy.php')">หาซื้อ / เช่า</button>
+			</div>
+			<div class="col-xs-6 text-left">
+				<button class="btn-introMenu sell font text-size-34" onclick="goto('Post')">ลงประกาศ<br>ฟรี</button>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<br>
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<form action="buy.php" method="get" enctype="multipart/form-data">
 					<div class="input-group">
-                    	<input type="text" class="form-control" style="font-size: 20px; background-color: rgba(255,255,255,0.6);" id="title" name="title" placeholder="คำค้นหา...">
-                    	<span class="input-group-btn">
-                        	<button class="btn btn-warning" type="submit" style="opacity:1;"><span class="glyphicon glyphicon-search "></span></button>
-                    	</span>
-                	</div>
+						<input type="text" class="form-control font" style="font-size: 20px; background-color: rgba(255,255,255,0.6);" id="title" name="title" placeholder="คำค้นหา...">
+						<span class="input-group-btn">
+							<button class="btn btn-warning" type="submit" style="opacity:1;"><span class="glyphicon glyphicon-search "></span></button>
+						</span>
+					</div>
 				</form>
 			</div>
+			<div class="col-md-3"></div>
+			
 		</div>
+		
+	</div>
 </div>
-<nav class="navbar-fixed-bottom ">
+
+<nav class="navbar-fixed-bottom" style="background-color: #DDDDDD;">
 	<?php include("footer.php") ?>
 </nav> 
  
@@ -152,6 +212,11 @@ include("Navbar/navbar.php");
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="bootstrap/js/jquery.validate.js"></script>
+<script type="text/javascript">
+	function goto(url){
+		window.location = url;
+	}
+</script>
 </body>
 </html>
 <?php

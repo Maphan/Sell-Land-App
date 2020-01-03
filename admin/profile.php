@@ -215,8 +215,7 @@ include("../Navbar/navbar_admin.php");
 							$totalRows_Province = mysql_num_rows($Province);
 							// img_post
 							$id_post=$row_All_Order['ID_post'];
-							mysql_select_db($database_Myconnection, $Myconnection);
-							$query_Img_Post = "SELECT * FROM img_post WHERE ID_post = '$id_post'";
+							$query_Img_Post = "SELECT * FROM imgs_post WHERE ID_post = '$id_post'";
 							$Img_Post = mysql_query($query_Img_Post, $Myconnection) or die(mysql_error());
 							$row_Img_Post = mysql_fetch_assoc($Img_Post);
 							$totalRows_Img_Post = mysql_num_rows($Img_Post);
@@ -246,18 +245,8 @@ include("../Navbar/navbar_admin.php");
 						?>
                         <?php // result img
 							$name_img="";
-							if($row_Img_Post['img1']!=NULL){
-								$name_img=$row_Img_Post['img1'];
-							}else if($row_Img_Post['img2']!=NULL){
-								$name_img=$row_Img_Post['img2'];
-							}else if($row_Img_Post['img3']!=NULL){
-								$name_img=$row_Img_Post['img3'];
-							}else if($row_Img_Post['img4']!=NULL){
-								$name_img=$row_Img_Post['img4'];
-							}else if($row_Img_Post['img5']!=NULL){
-								$name_img=$row_Img_Post['img5'];
-							}else if($row_Img_Post['img6']!=NULL){
-								$name_img=$row_Img_Post['img6'];
+							if($row_Img_Post['File_name']!=NULL){
+								$name_img=$row_Img_Post['File_name'];
 							}else{$name_img='../no_img.jpg';}
 						
 						?>

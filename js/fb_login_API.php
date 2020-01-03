@@ -39,31 +39,32 @@
                 console.log('Good to see you, ' + response.name + '.');
                 console.log(response);
 				console.log(response.email);
+				//กำหนดเหตุการ ส่งไปตวจสอบ
 				//check user in system
-				var url_fb_checkUser='<?php echo $level."register/check_userSystem_sever.php";?>';
-				$.ajax({
-					url:url_fb_checkUser,
-					type: 'POST',
-					data: {email:response.email},
-					success:function(data_check){
-						console.log(data_check);
-						if(data_check=='0'){//ยังไม่สมัคร
-							toSignup(response.name,response.email,response.link);
-						}else if(data_check=='1'){//สมัครแล้ว
-							var urlGetpass='<?php echo $level."phpObject/get_passUser_sever.php";?>';
-							var passAccess="dfmfd894g9er4gb54dfv984e9r4g9e4h9fv5b4e984h9sdfSSDfg849er4g9Df98g9ef549g5df4_jaruwat";
-							$.ajax({
-								url:urlGetpass,
-								type: 'POST',
-								data:{email:response.email,accessCode:passAccess},
-								success:function(datagetpssUser){
-									console.log(datagetpssUser);
-									toSignin(response.email,datagetpssUser);
-								}
-							})
-						}
-					}
-				})
+				// var url_fb_checkUser='<?php echo $level."register/check_userSystem_sever.php";?>';
+				// $.ajax({
+				// 	url:url_fb_checkUser,
+				// 	type: 'POST',
+				// 	data: {email:response.email},
+				// 	success:function(data_check){
+				// 		console.log(data_check);
+				// 		if(data_check=='0'){//ยังไม่สมัคร
+				// 			toSignup(response.name,response.email,response.link);
+				// 		}else if(data_check=='1'){//สมัครแล้ว
+				// 			var urlGetpass='<?php echo $level."phpObject/get_passUser_sever.php";?>';
+				// 			var passAccess="dfmfd894g9er4gb54dfv984e9r4g9e4h9fv5b4e984h9sdfSSDfg849er4g9Df98g9ef549g5df4_jaruwat";
+				// 			$.ajax({
+				// 				url:urlGetpass,
+				// 				type: 'POST',
+				// 				data:{email:response.email,accessCode:passAccess},
+				// 				success:function(datagetpssUser){
+				// 					console.log(datagetpssUser);
+				// 					toSignin(response.email,datagetpssUser);
+				// 				}
+				// 			})
+				// 		}
+				// 	}
+				// })
             });
         }
 		

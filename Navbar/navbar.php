@@ -77,12 +77,12 @@ $totalRows_Check_signin = mysql_num_rows($Check_signin);
 		color: #FFF;
 	}
 	.link:hover{
-		color: #0F976E;
+		color: #B8B8B8;
 	}
 </style>
 
 <nav class="navbar navbar-default navbar-fixed-top ">
-  <div class="container-fluid">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
 		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -93,10 +93,6 @@ $totalRows_Check_signin = mysql_num_rows($Check_signin);
 		</button>
         <div class="margindash pull-right hidden-lg hidden-md hidden-sm">
 			<li class="dropdown">
-		  	  <!--back func -->
-       		  <?php if($page_name=="view_order"||$page_name=="delete_post" ||$page_name=="Edit_post"||$page_name=="post"){?>
-				<span onclick="goBack()" class="glyphicon glyphicon-arrow-left text-size-17 link" style="cursor: pointer; margin-right: 5px;"></span>
-			  <?php }else{}?>
 			  <!-- user -->
 			  <?php if($row_Check_signin['Email']==NULL){?>
 				<a href="#login" data-toggle="modal" data-target="#myModal" style="margin: 10px;"><span class="glyphicon glyphicon-user text-W1 text-size-18 link" style="margin-top: 15px;"></span></a>
@@ -112,17 +108,20 @@ $totalRows_Check_signin = mysql_num_rows($Check_signin);
 			  <?php }?>
 			</li>
         </div>
-		<a class="navbar-brand" href="<?php echo $to_index;?>"><img src="<?php echo $img_logo;?>" width="80px" class="img-responsive navbar_loago"></img></a>
+		  <a class="navbar-brand" href="<?php echo $to_index;?>">
+   			<img src="<?php echo $img_logo;?>" width="220px" class="img-responsive navbar_loago phoneONhid"/>
+   			<img src="<?php echo $level;?>images/logo2.png" width="130px" class="img-responsive navbar_loago pc-hid"/>
+   		</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right navbar_menu">
       	<?php if($page_name=="view_order"||$page_name=="delete_post" ||$page_name=="Edit_post"||$page_name=="post"){?>
-      	<li class="" onclick="goBack()" ><a href=""><span class="glyphicon glyphicon-arrow-left text-size-18"></span> กลับ</a></li>
+      	<li onclick="goBack()" ><a href="#"><span class="glyphicon glyphicon-arrow-left text-size-18"></span> กลับ</a></li>
         <?php }else{}?>
-        <li class="<?php if($page_name=="index"){echo "active";} ?>" ><a href="<?php echo $to_index;?>">หน้าหลัก</a></li>
-        <li class="<?php if($page_name=="buy"){echo "active";} ?>"><a href="<?php echo $to_buy;?>">หาซื้อ</a></li>
+        <li class="<?php if($page_name=="buy"){echo "active";} ?>" ><a href="<?php echo $to_buy;?>">หน้าหลัก</a></li>
+        
         <li class="<?php if($page_name=="post"){echo "active";} ?>"><a href="<?php echo $to_post;?>">ลงประกาศฟรี</a></li>
         <!-- <li><a href="<?php echo $sert;?>">ค้นหา</a></li> -->
         <li class="dropdown">

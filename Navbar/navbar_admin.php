@@ -55,15 +55,15 @@ $totalRows_Check_signin = mysql_num_rows($Check_signin);
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-		<a class="navbar-brand" href="../"><img src="<?php echo $img_logo;?>" width="80px" class="img-responsive navbar_loago"></img></a>
+		  <a class="navbar-brand" href="<?php echo $to_index;?>">
+        <img src="<?php echo $img_logo;?>" width="220px" class="img-responsive navbar_loago phoneONhid"/>
+        <img src="<?php echo $level;?>images/logo2.png" width="130px" class="img-responsive navbar_loago pc-hid"/>
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right navbar_menu">
-      	<?php if($page_name!="dashboard"){?>
-      	<li class="" onclick="goBack()" ><a href=""><span class="glyphicon glyphicon-arrow-left text-size-18"></span>กลับ</a></li>
-        <?php }else{}?>
         <li class="<?php if($page_name=="index"){echo "active";} ?>" ><a href="dashboard.php">หน้าหลัก</a></li>
         <li class="<?php if($page_name=="buy"){echo "active";} ?>"><a href="<?php echo $to_buy;?>" target="_blank">โหมดผู้ใช้</a></li>
         <li class="dropdown">

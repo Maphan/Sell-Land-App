@@ -216,9 +216,6 @@ if(isset($_POST['pass']) && isset($_POST['id_post'])){
 			.container {
 				padding:0px;
 			}
-			.container-fluid{
-				padding:0px;
-			}
 		}
 		  
 	</style>
@@ -249,14 +246,14 @@ include("../Navbar/navbar.php");
                 </a>
             </div>
         </div>
-		<div class="col-md-9">
+		<div class="col-md-9" style="padding-left: 0px; padding-right: 0px;">
 		  <form action="<?php echo $editFormAction; ?>" id="form_edit" name="form_edit" method="POST" enctype="multipart/form-data">
             	
                 <div class="panel panel-default">
 					<div class="panel-heading text-center bg-B1">
 					  <h3 class="font"><span class="glyphicon glyphicon-globe color-main1"></span><b> แก้ไขข้อมูลอสังหาริมทรัพย์</b></h3>
  					</div>
-					<div class="panel-body">
+					<div class="panel-body" style="padding-left: 0px; padding-right: 0px;">
 						<div id="panel" class="col-md-12">	
                             <div class="col-md-6" style="padding-bottom:15px;">
                             	<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -455,12 +452,7 @@ include("../Navbar/navbar.php");
                                     <input type="url" class="form-control" id="facebook" name="facebook" placeholder="https://" value="<?php echo $row_Post['Facebook']; ?>"/>
                                 </div>
 							</div>
-                            <div id="panel" class="col-md-12">	
-                                <div id="lable" class="col-md-3"><span id="track">#&nbsp;</span>ที่อยู่</div>
-                                <div class="col-md-8">
-                                    <textarea name="address" rows="5" maxlength="500" class="form-control" id="address" placeholder="Address"><?php echo $row_Post['Address']; ?></textarea>
-                                </div>
-                        	</div>
+                            
                             <div id="panel" class="col-md-12">	
                                 <div id="lable" class="col-md-3"><span id="track">#&nbsp;</span>รหัสผ่านประกาศ</div>
                                 <div class="col-md-6">
@@ -486,6 +478,7 @@ include("../Navbar/navbar.php");
                 <input name="id_contact" id="id_contact" type="hidden" value="<?php echo $row_Post['id']; ?>"><!-- ID of table contact -->
                 <input name="id_post" id="id_post" type="hidden" value="<?php echo $row_Post['ID_post']; ?>">
                 <input name="id_user" id="id_user" type="hidden" value="<?php echo $row_Post['ID_user']; ?>">
+                <input name="address" id="address" type="hidden" value="<?php echo $row_Post['Address']; ?>">
                 <input name="date" id="date" type="hidden" value="<?php echo date('Ymd');?>">
                 <input name="time" id="time" type="hidden" value="<?php echo date('His');?>">
                 <input type="hidden" name="MM_update" value="form_edit">
