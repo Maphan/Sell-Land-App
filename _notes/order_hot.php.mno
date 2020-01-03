@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Hot_order" value="name:ID;datatype:int,name:ID_post;datatype:string,name:ID_user;datatype:string,name:Post_type;datatype:string,name:Property_type;datatype:string,name:Title;datatype:string,name:area_size_rai;datatype:int,name:area_size_ngan;datatype:int,name:area_size_var;datatype:real,name:Price;datatype:int,name:Geography;datatype:string,name:Pravince;datatype:string,name:District;datatype:string,name:Amphur;datatype:string,name:Latitude;datatype:string,name:Longitude;datatype:string,name:Other;datatype:blob,name:Date;datatype:date,name:Time;datatype:time,name:ID;datatype:int,name:id_post;datatype:string,name:visit;datatype:int,name:PROVINCE_ID;datatype:int,name:PROVINCE_CODE;datatype:string,name:PROVINCE_NAME;datatype:string,name:GEO_ID;datatype:int" />
+</info>

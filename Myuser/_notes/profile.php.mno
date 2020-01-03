@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_All_Order" value="name:ID;datatype:int,name:ID_post;datatype:string,name:ID_user;datatype:string,name:Post_type;datatype:string,name:Property_type;datatype:string,name:Title;datatype:string,name:area_size_rai;datatype:int,name:area_size_ngan;datatype:int,name:area_size_var;datatype:real,name:Price;datatype:int,name:Geography;datatype:string,name:Pravince;datatype:string,name:District;datatype:string,name:Amphur;datatype:string,name:Latitude;datatype:string,name:Longitude;datatype:string,name:Other;datatype:blob,name:Date;datatype:date,name:Time;datatype:time" />
+	<infoitem key="UD_Province" value="name:PROVINCE_ID;datatype:int,name:PROVINCE_CODE;datatype:string,name:PROVINCE_NAME;datatype:string,name:GEO_ID;datatype:int" />
+	<infoitem key="UD_Img_Post" value="name:ID;datatype:int,name:ID_post;datatype:string,name:img1;datatype:string,name:img2;datatype:string,name:img3;datatype:string,name:img4;datatype:string,name:img5;datatype:string,name:img6;datatype:string" />
+	<infoitem key="UD_Myuser" value="name:ID;datatype:int,name:ID_user;datatype:string,name:First_name;datatype:string,name:Last_name;datatype:string,name:Email;datatype:string,name:Password;datatype:string,name:Phone1;datatype:int,name:Phone2;datatype:int,name:Line;datatype:string,name:FB;datatype:string,name:Address;datatype:string" />
+	<infoitem key="UD_visit_post" value="name:ID;datatype:int,name:id_post;datatype:string,name:visit;datatype:int" />
+</info>

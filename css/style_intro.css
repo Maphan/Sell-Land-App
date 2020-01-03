@@ -1,0 +1,94 @@
+.cursor{
+	cursor: pointer;
+}
+.gb_intro{
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	background-color: #070707;
+	background-image: url(../images/bg_intro2.jpg);
+	display: table;
+	top: 0;
+	background-size: cover;
+	font-family: 'cs_chatthairegular';
+}
+.gb_intro .inner{
+	padding-top: 30px;
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	max-width: none;
+	z-index: 999;
+}
+.gb_intro .inner_buttom{
+	display: table-row;
+	vertical-align:top;
+	padding-bottom: 0px;
+	width: 100%;
+	max-width: none;
+	z-index: 999;
+}
+
+.content {
+	max-width: 500px;
+	text-align: center;
+	margin: auto;
+}
+@media (max-width: 767px){
+	.content{
+		padding-top: 80px;
+	}
+}
+.content .button{
+	font-family: 'cs_chatthairegular';
+	font-size: 25px;
+	color: #258ed7;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: solid 2px #258ed7;
+	background-color: rgba(0,0,0,0.08);
+	transition: 0.2s;
+}
+.content .button:hover{
+	color: #389be0;
+	border: solid 2px  #389be0;
+	transition:0.5s;
+}
+
+.btn_signin{
+	font-family: 'cs_chatthairegular';
+	font-size: 25px;
+	color: #258ed7;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: solid 2px #258ed7;
+	background-color: rgba(0,0,0,0.1);
+	transition: 0.2s;
+}
+
+@media (min-width: 767px){
+	.img_sell{
+		z-index: 2;
+	}
+	.img_buy{
+		display: table-cell;
+		align-content: center;
+		z-index: 1;
+	}
+}
+@media (max-width: 767px){
+	.box_img_intro{
+		margin-top: -30px;
+	}
+	.img_sell{
+		margin-left: 30%;
+		width: 150px;
+		z-index: 2;
+	}
+	.img_buy{
+		margin-left: 30%;
+		width: 150px;
+		z-index: 1;
+	}
+}
+

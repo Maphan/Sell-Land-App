@@ -1,0 +1,231 @@
+@media (min-width: 767px){
+	#intor{
+		text-align: left;
+		padding-top:8px;
+		padding-bottom:8px;
+		background-color: #D6D6D6;
+		color:#424242;
+		border-radius:7px 7px 0px 0px;
+		border:1px solid #CCC;
+	}
+	#intor #icon_title{
+		font-size: 28px;
+		padding-left: 20px;
+		padding-right: 10px;
+		float: left;
+	}
+	#intor #text_title{
+		font-size: 30px;
+	}
+	#intor #icon_date{
+		font-size: 15px;
+		padding-left:45px;
+	}
+	#intor #text_date{
+		font-size: 18px;
+		color:#666;
+	}
+
+	#box_detail{
+		padding:5px 30px;
+	}
+
+	#box_area{
+		 border-bottom:1px solid #DFDFDF;
+		 padding-bottom: 10px;
+		 margin-bottom:10px;
+		 text-align: center;
+		 font-size: 32px;
+	}
+	#box_area #icon{
+		font-size:24px;
+	}
+
+	#Property{
+		font-size: 30px;
+		text-align: center;
+		color:red; 
+		padding:15px 0px;
+	}
+	#Price{
+		font-size: 30px;
+		text-align: center;
+		color: orange;
+		padding:15px 0px;
+	}
+	#Price #icon{
+		font-size: 32px;
+		color:gray;
+	}
+
+	#box_locaton{
+		margin-top:10px;
+		color:#666;
+		font-size: 20px;
+	}
+	#box_locaton #icon{
+	}
+	#box_locaton #text{
+		font-size: 25px;
+	}
+
+	#box_map{
+		margin: 0px;
+		padding: 0px;
+	}
+	#box_map #map{
+		position: relative;
+		min-height: 400px;
+		border-radius: 5px;
+	}
+
+	#Visit{
+		font-size: 20px;
+		text-align: center;
+		padding:7px 0px 0px 0px;
+		margin-top: 8px;
+	}
+	#Visit #icon{
+		font-size: 17px;
+		color:grey;
+	}
+	#Visit #icon2{
+		font-size: 17px;
+		color:grey;
+	}
+	#Share{
+		font-size: 20px;
+		text-align: center;
+		color: orange;
+		padding:7px 0px 0px 0px;
+		margin-top: 8px;
+	}
+	#Share #icon_FB{
+		cursor: pointer;
+		color:#005;
+	}
+	#Share #icon_TW{
+		cursor: pointer;
+		color: #39F;
+	}
+	#Share #icon_G{
+		cursor: pointer;
+		color: #B30000;
+	}
+
+}
+
+@media (max-width: 767px){
+	#intor{
+		text-align: left;
+		padding-top:8px;
+		padding-bottom:8px;
+		background-color: #D6D6D6;
+		color:#424242;
+		border-radius:7px 7px 0px 0px;
+		border:1px solid #CCC;
+	}
+	#intor #icon_title{
+		font-size: 20px;
+		padding-top: 10px;
+		padding-left: 0px;
+		padding-right: 10px;
+		float: left;
+	}
+	#intor #text_title{
+		font-size: 28px;
+	}
+	#intor #icon_date{
+		font-size: 15px;
+		padding-left:5px;
+	}
+	#intor #text_date{
+		font-size: 18px;
+		color:#666;
+	}
+
+	#box_detail{
+		padding:5px 0px;
+	}
+
+	#box_area{
+		 border-bottom:1px solid #DFDFDF;
+		 padding-bottom: 10px;
+		 margin-bottom:10px;
+		 text-align: center;
+		 font-size: 22px;
+	}
+	#box_area #icon{
+		font-size:16px;
+	}
+
+	#Property{
+		font-size: 22px;
+		text-align: center;
+		color:red; 
+		padding:15px 0px;
+	}
+	#Price{
+		font-size: 22px;
+		text-align: center;
+		color: orange;
+		padding:15px 0px;
+	}
+	#Price #icon{
+		color:gray;
+	}
+
+	#box_locaton{
+		margin-top:15px;
+		color:#666;
+		font-size: 16px;
+	}
+	#box_locaton #icon{
+	}
+	#box_locaton #text{
+		font-size: 20px;
+	}
+	#box_map{
+		margin: 0px;
+		padding: 0px;
+	}
+	#box_map #map{
+		position: relative;
+		min-height: 250px;
+		border-radius: 5px;
+	}
+
+	#Visit{
+		font-size: 20px;
+		text-align: center;
+		padding:7px 0px 0px 0px;
+		margin-top: 8px;
+	}
+	#Visit #icon{
+		font-size: 17px;
+		color:grey;
+	}
+	#Visit #icon2{
+		font-size: 17px;
+		color:grey;
+	}
+	#Share{
+		font-size: 20px;
+		text-align: center;
+		color: orange;
+		padding:7px 0px 0px 0px;
+		margin-top: 8px;
+	}
+	#Share #icon_FB{
+		cursor: pointer;
+		color:#005;
+	}
+	#Share #icon_TW{
+		cursor: pointer;
+		color: #39F;
+	}
+	#Share #icon_G{
+		cursor: pointer;
+		color: #B30000;
+	}
+}

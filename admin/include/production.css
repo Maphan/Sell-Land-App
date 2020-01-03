@@ -1,0 +1,38 @@
+#all_product{
+	width: 650px;
+    font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;
+}
+.item_product{
+	float: left;
+	height:330px;
+	padding-top:25px;
+	padding-bottom:25px;
+	padding-left:60px;
+	padding-right:60px;
+	text-align:center;
+}
+.data_production{
+	width:205px;
+}
+.data_production:hover{
+	background:#DDD;
+}
+#btn_buy{
+	margin:5px;
+	cursor:pointer;
+}
+
+.select_group{
+	margin-right:0px;
+	background:#EEEEEE;
+	width:100px;
+	height:25px;
+	transition: 0.5s ;
+	cursor:pointer;
+}
+.select_group:hover{
+	background:#df57df;
+}
+.select_group_active{
+	background:#df57df;
+}

@@ -1,0 +1,27 @@
+/* CSS Document */
+.box-list_province{
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #BCBCBC;
+	padding: 0px 15px 19px 15px;
+	margin-bottom:0px !important;
+}
+.box-list_province .list_province {
+	text-align: center;
+	color: #fff;
+	height: 40px;
+	background-color: #0F976E;
+	font-size: 24px;
+	vertical-align: middle;
+	border-radius: 6px 6px 0px 0px;
+	-moz-border-radius: 6px 6px 0px 0px;
+	-webkit-border-radius: 6px 6px 0px 0px;
+	font-family: 'cs_chatthairegular';
+	margin-bottom: 10px;
+}
+.list_province .cover_item{
+}
+.cover_item .item_province{
+	font-family: 'cs_chatthairegular';
+	font-size: 18px;
+}

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Myuser" value="name:Password;datatype:string" />
+	<infoitem key="UD_admin" value="name:permission;datatype:int" />
+</info>

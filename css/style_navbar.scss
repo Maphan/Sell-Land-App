@@ -1,0 +1,113 @@
+$bgDefault   : rgba(0,0,0,0);
+$bgHighlight : rgba(0,0,0,0);
+$colDefault  : #ecf0f1;
+$colHighlight: #CCC;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  border: 0px;
+	margin-top: 25px;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus, {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+@media (min-width: 767px) {
+	
+}
+
+//-----------------------------------------------------------
+.navbar_menu{
+	font-family: 'cs_chatthairegular';
+	font-size: 25px;
+}
+@media (min-width: 767px){
+	.navbar-default {
+ 		
+	}
+	.navbar-brand {
+ 		float: left;
+ 		height: 50px;
+ 		padding: 0px 80px;
+  		font-size: 18px;
+  		line-height: 20px;
+	}
+	.navbar-left {
+    	float: left !important;
+		margin-top: 10px;
+  	}
+  	.navbar-right {
+    	float: right !important;
+    	margin-right: 15px;
+		margin-top: 10px;
+  }
+	.navbar_menu{
+		font-family: 'cs_chatthairegular';
+		font-size: 24px;
+	}
+	.navbar_menu b{
+		font-family: 'cs_chatthairegular';
+		font-size: 22px;
+	}
+}
+@media (max-width: 767px){
+	.navbar-default {
+ 		background-color: rgba(15,15,15,0.88);
+		border-color: #080808;
+		margin-top: 0px;
+	}
+	.navbar-brand {
+ 		float: left;
+ 		height: 50px;
+ 		padding: 5px 20px;
+  		font-size: 18px;
+  		line-height: 20px;
+	}
+	.navbar_loago{
+		width: 70px;
+		height: auto;
+	}
+	.navbar_menu{
+		font-family: 'cs_chatthairegular';
+		font-size: 18px;
+	}
+}

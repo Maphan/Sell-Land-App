@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Hot_order" value="name:ID;datatype:int,name:visit;datatype:int" />
+	<infoitem key="UD_order_count_visit" value="name:ID;datatype:int,name:visit;datatype:int" />
+</info>
